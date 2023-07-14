@@ -7,14 +7,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./images/images.jpg');
+  background-image: url('./images/pngtree-hand-drawn-seamless-pattern-with-books-and-bo.jpg');
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: 500px 500px;
+    background-repeat: repeat;
     background-attachment: fixed;
+    
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+p{
+  text-indent: 20px;
+}
+
+h2{
+  text-align: center;
 }

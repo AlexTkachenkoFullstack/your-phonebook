@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 export const FilterContainer = styled.div`
 display:flex;
@@ -13,8 +13,9 @@ margin-top:0;
 `
 
 export const FilterLable = styled.label`
-font-size:45px;
+font-size:36px;
 margin-bottom: 10px;
+padding-left: 112px;
 `
 
 export const FilterInput = styled.input`
@@ -23,9 +24,9 @@ height: 40px;
 font-size: 32px;
 border-radius: 8px;
 padding-left: 15px;
+margin-left: 112px;
 cursor:pointer;
 opacity:0.8;
-
 &:hover{
     background-color: #fff;
     animation: pulsare 2s ease-in-out;

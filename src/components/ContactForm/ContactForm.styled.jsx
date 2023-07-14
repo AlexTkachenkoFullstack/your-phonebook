@@ -1,6 +1,6 @@
 // 1-ЫЙ ВАРИАНТ С БИБЛИОТЕКАМИ FORMIK И YUP
 
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import {  Form, Field } from 'formik';
 
 export const FormContainer = styled(Form )`
@@ -13,6 +13,8 @@ width: 500px;
 height: auto;
 padding: 20px;
 opacity: 0.9;
+margin-left: auto;
+margin-right: auto;
 `
 export const FormLabelName = styled.label`
 font-size: 30px;
@@ -25,8 +27,8 @@ export const FormInputName = styled(Field)`
 border: 1px solid black;
 padding: 5px;
 margin-bottom: 30px;
-width: 490px;
-height: 30px;
+width: 458px;
+height: 40px;
 font-size: 28px;
 border-radius: 10px;
 
@@ -39,8 +41,8 @@ export const FormInputTel = styled(Field)`
 border: 1px solid black;
 padding: 5px;
 margin-bottom: 30px;
-width: 490px;
-height: 30px;
+width: 458px;
+height: 40px;
 font-size: 28px;
 border-radius: 10px;
 
@@ -52,6 +54,7 @@ export const FormButton = styled.button`
 display: flex;
 justify-content: center;
 align-items: center;
+font-weight: 600;
 width: 150px;
 height: 50px;
 font-size: 24px;

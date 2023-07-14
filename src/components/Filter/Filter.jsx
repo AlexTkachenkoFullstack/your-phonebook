@@ -7,9 +7,10 @@ import {isLoadingSelector } from "redux/selectors";
 
 function Filter() {
     const dispatch = useDispatch();
-    const isLoading = useSelector(isLoadingSelector)
+    // const isLoading = useSelector(isLoadingSelector)
+    const isLoading=false
     const handleFilterChange = (event) => {
-        dispatch(setStatusFilter(event.target.value))
+        // dispatch(setStatusFilter(event.target.value))
     }
 
     return (<FilterContainer>

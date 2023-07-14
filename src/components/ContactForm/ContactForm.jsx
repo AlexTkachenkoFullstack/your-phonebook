@@ -4,12 +4,14 @@ import { FormContainer, FormLabelName, FormInputName, FormInputTel,  FormButton,
 import { Formik, ErrorMessage } from 'formik';
 import *as yup from 'yup'
 import {  useDispatch, useSelector } from "react-redux";
-import { addContact } from "redux/operations";
+import { addContactThunk } from "redux/contacts/operations";
 import { contactsSelector } from "redux/selectors";
- 
+ const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
+
+// phoneNumber: Yup.string().matches(phoneRegExp, 'Phone number is not valid')
 const schame = yup.object({
   name: yup.string("It should be string").required("It shouldn't be empty").max(30).trim().matches(),
-  phone: yup.number("It shold be number").required().positive()
+  phone: yup.string().matches(phoneRegExp, 'Phone number is not valid')
  });
 
 
@@ -28,7 +30,7 @@ const FormError = ({name}) => {
 
 function ContactForm() {
 
-    const contacts = useSelector(contactsSelector)
+    const contacts = useSelector(state=>state.contacts.items)
 
     const dispatch=useDispatch()
     const handleSubmit = ({ name: newName, phone }, actions) => {
@@ -37,7 +39,7 @@ function ContactForm() {
             return
         }
 
-        dispatch(addContact({ name: newName, phone: phone.toString() }))
+        dispatch(addContactThunk({ name: newName, number: phone.toString() }))
         
        actions.resetForm() 
 }
@@ -58,7 +60,7 @@ function ContactForm() {
                                 
                     <FormLabelName>Number
                         <FormInputTel
-                            type="number"
+                            type="tel"
                             name="phone"
                         />
                         <FormError name="phone"/>

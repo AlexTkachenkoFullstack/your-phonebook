@@ -1,17 +1,25 @@
-import styled from 'styled-components';
-
+import styled from '@emotion/styled';
+import phoneBg from './/..//..//images/deskBgImg.png'
 
 export const AppContainer = styled.div`
-    width: 865px;
-    display: flex;
-    flex-direction:column;
-    padding: 30px;
-    font-size: 40px;
-    color: #010101;
-    margin-left: auto;
-    margin-right: auto;
-            
+   margin-left: auto;
+  margin-right: auto;
+  
+//   background-image: url(${phoneBg});
+//   height: 100vh;
+//   background-size: 768px 414px;
+//   background-position: center;
+//   background-repeat: no-repeat;
+//   position: fixed;
+//   transform: translate(-50%, -50%);
+//   top: 0;
+//   left: 50%;
+//   top: 50%;
+//   width: 768px;
+// box-shadow: 0px 0px 100px 50px #000;
 `
+
+export const BgImg=styled.div``
 
 export const ErrorMessageContainer = styled.div`
     display: flex;
@@ -38,3 +46,11 @@ export const ApiTitleH2 = styled.h2`
     padding-top: 20px;
     padding-bottom: 10px;
     `
+
+//             Welcome 
+// to  Phonebook app!
+
+//  Register now and 
+//  start conveniently 
+//  organizing your 
+//  contacts.
