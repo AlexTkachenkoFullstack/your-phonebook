@@ -1,33 +1,55 @@
-import { IoPersonCircleSharp } from "react-icons/io5"
-import PropTypes from 'prop-types';
-import { ButtonDeliteContact, ContactListItem, ContactListItemInfo, ContactListItemText } from "./Contacttem.styled"
-import { useDispatch } from "react-redux"
-import { deleteContact } from "redux/operations";
-import { useState } from "react";
 
-export const ContactItem = ({id, name, number}) => {
+import PropTypes from 'prop-types';
+import { ButtonChangeContact, ContactIcon, ButtonDeliteContact, ButtonText, ContactListItem, ContactListItemInfo, ContactListItemText } from "./Contacttem.styled"
+import { useDispatch } from "react-redux"
+
+import { useState } from "react";
+import { deleteContactThunk } from "redux/contacts/operations";
+import { createPortal } from 'react-dom';
+import ModalOnChangeContact from "components/ModalOnChangeContact/ModalOnChangeContact";
+const modalRoot=document.getElementById('modal-root')
+
+export const ContactItem = ({ id, name, number }) => {
+    const [open, setOpen] = useState(false);
+
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
     const dispatch = useDispatch()
     const [deleting, setDeleting]=useState(false)
     const handleDelete = (event) => {
         setDeleting(true)
-        dispatch(deleteContact(id))
+        dispatch(deleteContactThunk(id))
     }
 
+    // const openModal = () => {
+        
+    // }
+
     return (<ContactListItem>
-                    <IoPersonCircleSharp />
+                    <ContactIcon />
                             <ContactListItemInfo>
-                                <ContactListItemText>{name}: {number}</ContactListItemText>
+                             <ContactListItemText>{name}: {number}</ContactListItemText>
+                                <ButtonChangeContact
+                                    type="button"
+                                    onClick={handleOpen}
+                                >
+                            <ButtonText>Change</ButtonText>
+                                </ButtonChangeContact> 
                                 <ButtonDeliteContact
                                     disabled={deleting}
                                     type="button"
                                     onClick={handleDelete}
                                 >
                             {!deleting
-                                ? <p>Delete</p>
-                                : <p>deleting</p> }  
+                                ? <ButtonText>DELETE</ButtonText>
+                                : <ButtonText>deleting</ButtonText> }  
                                 </ButtonDeliteContact> 
                             </ContactListItemInfo> 
-
+                        {createPortal(
+                            <ModalOnChangeContact onCloseModal={handleClose} open={open} id={id} name={name} number={number} />,
+          modalRoot
+  )}
              </ContactListItem>
         
     )

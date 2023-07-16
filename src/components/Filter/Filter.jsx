@@ -1,16 +1,16 @@
 import React from "react";
 import { FilterContainer,FilterLable, FilterInput, IsLoading } from "./Filter.styled";
 import { useDispatch, useSelector } from "react-redux";
-import { setStatusFilter } from "redux/filterSlice";
+import { setStatusFilter } from "redux/filter/filterSlice";
 import debounce from "lodash.debounce";
-import {isLoadingSelector } from "redux/selectors";
+
 
 function Filter() {
     const dispatch = useDispatch();
     // const isLoading = useSelector(isLoadingSelector)
     const isLoading=false
     const handleFilterChange = (event) => {
-        // dispatch(setStatusFilter(event.target.value))
+        dispatch(setStatusFilter(event.target.value))
     }
 
     return (<FilterContainer>

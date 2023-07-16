@@ -8,6 +8,8 @@ export const Container = styled.div`
   height: 100%;
   box-shadow: 0px 0px 100px 50px #000;
   margin-top: 64px;
+  
+
 `
 export const BgImg = styled.div`
 background-image: url(${phoneBg});
@@ -15,4 +17,11 @@ background-image: url(${phoneBg});
   background-size: 768px 415px;
   background-position: top;
   background-repeat: no-repeat;
+`
+export const LoginPageText = styled.div`
+background: rgb(229 232 238); 
+backdropFilter: blur(10px); 
+padding:24px;
+font-size:24px;
+font-family: 'Caveat', cursive;
 `

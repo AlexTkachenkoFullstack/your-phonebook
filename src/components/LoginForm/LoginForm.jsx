@@ -1,4 +1,4 @@
-import { BgImg, Container } from "./LoginForm.styled"
+import { BgImg, Container, Form, Input, InputContainer, Label, LogButton } from "./LoginForm.styled"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { loginThunk } from "redux/auth/operations"
@@ -30,17 +30,16 @@ export const LoginForm = () => {
     }
 
     return (
-        <LoginFormEl onSubmit={handleSubmit} >
-            <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                <input onChange={handleChange} name='email' value={email} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ marginLeft: 'auto', marginRight: 'auto' }} />
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                <input onChange={handleChange} name='password' value={password} type="password" className="form-control" id="exampleInputPassword1" style={{ marginLeft: 'auto', marginRight: 'auto' }} />
-            </div>
-            <button type="submit" className="btn btn-primary">Login</button>
-        </LoginFormEl>
+        <Form onSubmit={handleSubmit} >
+            <InputContainer>
+                <Label htmlFor="exampleInputEmail1" className="form-label">Email address</Label>
+                <Input onChange={handleChange} name='email' value={email} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style={{ marginLeft: 'auto', marginRight: 'auto' }} />
+            </InputContainer>
+            <InputContainer>
+                <Label htmlFor="exampleInputPassword1" className="form-label">Password</Label>
+                <Input onChange={handleChange} name='password' value={password} type="password" className="form-control" id="exampleInputPassword1" style={{ marginLeft: 'auto', marginRight: 'auto' }} />
+            </InputContainer>
+            <LogButton type="submit" className="btn btn-primary">Login</LogButton>
+        </Form>
     )
 }

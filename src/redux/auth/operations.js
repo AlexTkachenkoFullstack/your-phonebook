@@ -5,11 +5,11 @@ export const instance = axios.create({
     baseURL: 'https://connections-api.herokuapp.com/'
 });
 
-const setAuthHeader = (token) => {
+export const setAuthHeader = (token) => {
     instance.defaults.headers.common.Authorization = `Bearer ${token}`;
 }
 
-const delAuthHeader = () => {
+export const delAuthHeader = () => {
     instance.defaults.headers.common.Authorization = '';
 }
 
@@ -53,7 +53,6 @@ export const logOutThunk = createAsyncThunk(
         }
     }
 )
-
 
 export const refreshThunk = createAsyncThunk(
     'auth/refresh',

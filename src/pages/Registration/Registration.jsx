@@ -1,5 +1,5 @@
 import { RegistrationForm } from "components/RegistrationForm/RegistrationForm"
-import { BgImg, Container } from "./Registration.styled"
+import { BgImg, Container, RegistratonPageText } from "./Registration.styled"
 
 export const Registration = () => {
     return (
@@ -8,7 +8,7 @@ export const Registration = () => {
         <Container>
             <RegistrationForm/>
             <BgImg/>
-            <div style={{background: 'rgb(229 232 238)', backdropFilter: 'blur(10px)', padding:24}}>
+            <RegistratonPageText style={{background: 'rgb(229 232 238)', backdropFilter: 'blur(10px)', padding:24}}>
                 <p>Welcome to the Phonebook!</p>
                 <ul>1.Registration:
                     <li>On the main application page, click on the "Registration" button.</li>
@@ -49,7 +49,7 @@ export const Registration = () => {
                     Remember that your contacts will be stored on the server, and you can access them, make changes,
                     and delete unnecessary contacts whenever you need to.
                 </p>
-        </div>
+        </RegistratonPageText>
 
         </Container>
         

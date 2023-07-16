@@ -16,3 +16,10 @@ background-image: url(${phoneBg});
   background-position: top;
   background-repeat: no-repeat;
 `
+export const RegistratonPageText = styled.div`
+background: rgb(229 232 238); 
+backdropFilter: blur(10px); 
+padding:24px;
+font-size:24px;
+font-family: 'Caveat', cursive;
+`

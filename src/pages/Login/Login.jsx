@@ -1,5 +1,5 @@
 import { Registration } from "pages/Registration/Registration"
-import { BgImg, Container } from "./Login.styled"
+import { BgImg, Container, LoginPageText } from "./Login.styled"
 import { LoginForm } from "components/LoginForm/LoginForm"
 import { Outlet } from "react-router-dom"
 export const Login = () => {
@@ -8,7 +8,7 @@ export const Login = () => {
         <Container>
             <LoginForm/>
             <BgImg/>
-            <div style={{background: 'rgb(229 232 238)', backdropFilter: 'blur(10px)', padding:24}}>
+            <LoginPageText>
                 <p>Welcome to the Phonebook!</p>
                 <ul>1.Registration:
                     <li>On the main application page, click on the "Registration" button.</li>
@@ -49,7 +49,7 @@ export const Login = () => {
                     Remember that your contacts will be stored on the server, and you can access them, make changes,
                     and delete unnecessary contacts whenever you need to.
                 </p>
-        </div>
+        </LoginPageText>
 
         </Container>
         

@@ -5,11 +5,11 @@ export const Link = styled(NavLink)`
 color:white;
 font-size:24px;
 text-decoration: none;
-
-
+letter-spacing: 1px;
+font-family: 'Bagel Fat One', cursive;
 
 &:hover, &:focus{
-    color:#f8f9fa;
+    color:#7af7c0;
     scale:1.1;
 }
 &:active{

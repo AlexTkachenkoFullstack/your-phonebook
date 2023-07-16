@@ -5,15 +5,13 @@ import { Formik, ErrorMessage } from 'formik';
 import *as yup from 'yup'
 import {  useDispatch, useSelector } from "react-redux";
 import { addContactThunk } from "redux/contacts/operations";
-import { contactsSelector } from "redux/selectors";
  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 // phoneNumber: Yup.string().matches(phoneRegExp, 'Phone number is not valid')
 const schame = yup.object({
-  name: yup.string("It should be string").required("It shouldn't be empty").max(30).trim().matches(),
-  phone: yup.string().matches(phoneRegExp, 'Phone number is not valid')
+  name: yup.string("It should be string").required("It shouldn't be empty").max(16).trim().matches(),
+  phone: yup.string().matches(phoneRegExp, 'Phone number is not valid').required("It shouldn't be empty")
  });
-
 
  const initialValue = {
         name: '',
@@ -51,7 +49,7 @@ function ContactForm() {
             >
                 <FormContainer autoComplete="off">
                     <FormLabelName >Name
-                <FormInputName 
+                        <FormInputName 
                             type="text"
                             name="name" 
                         />

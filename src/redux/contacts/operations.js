@@ -1,11 +1,17 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { instance } from "redux/auth/operations";
 import { Notify } from "notiflix";
-
+import { setAuthHeader } from "redux/auth/operations";
 export const fetchContactsThunk = createAsyncThunk(
     'contacts/fetch',
     async (_, thunkAPI) => {
         try {
+            const state = thunkAPI.getState()
+            if (state.auth.token) {
+                setAuthHeader(state.auth.token)
+            } else {
+                throw new Error('No token')
+            }
             const response = await instance('/contacts')
             console.log(response.data)
             return response.data
@@ -46,7 +52,12 @@ export const deleteContactThunk = createAsyncThunk(
 export const changeContactThunk = createAsyncThunk(
     'contacts/changeContact',
     async ({ id, contact }, thunkAPI) => {
-        const response = await instance.patch(`/contacts/${id}`, contact)
-        console.log(response)
+        try {
+            const response = await instance.patch(`/contacts/${id}`, contact)
+             Notify.success('Сontact was changed', { fontSize:'20px', width:'300px'});
+            return (response.data)//{id,name, data}
+        } catch (error){
+            return thunkAPI.rejectWithValue(error.message)
+        }
     }
 )

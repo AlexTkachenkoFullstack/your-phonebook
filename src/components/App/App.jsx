@@ -4,8 +4,7 @@ import ContactList from 'components/ContactList/ContactList';
 import Filter from 'components/Filter';
 import { AppContainer, ApiTitleH1, ApiTitleH2, ErrorMessage, ErrorMessageContainer } from './App.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
-import { errorSelector } from 'redux/selectors';
+
 import { ContactsCounter } from 'components/ContactsCounter/ContactsCounter';
 import ButtonAppBar from '../NavBar/NavBar';
 import { Route,Routes,Navigate } from 'react-router-dom';

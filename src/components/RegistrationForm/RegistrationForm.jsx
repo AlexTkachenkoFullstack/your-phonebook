@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { Form } from "./RegistrationForm.styled"
+import { EmailHelpText, Form, Input, InputContainer, Label, RegButton } from "./RegistrationForm.styled"
 import { registrationThunk } from "redux/auth/operations"
 import { useState } from "react"
 
@@ -30,6 +30,10 @@ const [password, setPassword] = useState('')
         const name = e.target.elements.name.value;
         const password = e.target.elements.password.value;
         const email = e.target.elements.email.value;
+        if (!name || !password || !email) {
+            alert('Please fill in all fields of the form')
+            return
+        }
         dispatch(registrationThunk({ name, email, password }))
         setName('');
         setEmail('');
@@ -37,20 +41,20 @@ const [password, setPassword] = useState('')
     }
     return (
          <Form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                    <label htmlFor="inputName" className="form-label" >Name</label>
-                <input type="text" onChange={handleChange} className="form-control" id="inputName" name='name' value={name} />
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="inputEmail1" className="form-label">Email address</label>
-                <input type="email" onChange={handleChange} className="form-control" id="inputEmail1" aria-describedby="emailHelp" name='email' value={email} />
-                    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="inputPassword1" className="form-label">Password</label>
-                <input type="password" onChange={handleChange} className="form-control" id="inputPassword1" name='password' value={password} />
-                </div>
-                <button type="submit" className="btn btn-primary">Register</button>
+                <InputContainer>
+                    <Label htmlFor="inputName" className="form-label" >Name</Label>
+                <Input type="text" maxLength={15} onChange={handleChange} className="form-control" id="inputName" name='name' value={name} />
+                </InputContainer>
+                <InputContainer >
+                    <Label htmlFor="inputEmail1" className="form-label">Email address</Label>
+                <Input type="email" onChange={handleChange} className="form-control" id="inputEmail1" aria-describedby="emailHelp" name='email' value={email} />
+                    <EmailHelpText id="emailHelp" className="form-text">We'll never share your email with anyone else.</EmailHelpText>
+                </InputContainer>
+                <InputContainer >
+                    <Label htmlFor="inputPassword1" className="form-label">Password</Label>
+                <Input type="password" onChange={handleChange} className="form-control" id="inputPassword1" name='password' value={password} />
+                </InputContainer>
+                <RegButton type="submit" className="btn btn-primary">Register</RegButton>
             </Form>
     )
 }
