@@ -1,7 +1,7 @@
-import { RegistrationForm } from "components/RegistrationForm/RegistrationForm"
+import RegistrationForm from "components/RegistrationForm/RegistrationForm"
 import { BgImg, Container, RegistratonPageText } from "./Registration.styled"
 
-export const Registration = () => {
+const Registration = () => {
     return (
         <>
     
@@ -57,3 +57,5 @@ export const Registration = () => {
            
     )
 }
+
+export default Registration

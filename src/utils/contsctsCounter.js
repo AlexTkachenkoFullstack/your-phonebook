@@ -1,7 +1,7 @@
 
 export const countContacts = (contacts) => {
     if (contacts.length === 0) {
-        return
+        return 0
     }
     return contacts.length
 }

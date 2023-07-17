@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
@@ -25,17 +24,17 @@ function telephoneCheck(str) {
   return patt.test(str);
 }
 
-export default function ModalOnChangeContact({onCloseModal, open, id, name, number}) {
+const ModalOnChangeContact=({onCloseModal, open, id, name, number}) =>{
     const dispatch=useDispatch()
     const handleSubmit = (e) => {
         e.preventDefault();
         const name = e.target.elements.name.value
-      const number = e.target.elements.number.value;
-      const isValid = telephoneCheck(number)
-      if (!isValid) {
-        alert('Please enter a valid phone number')
-        return
-      }
+        const number = e.target.elements.number.value;
+        const isValid = telephoneCheck(number)
+        if (!isValid) {
+          alert('Please enter a valid phone number')
+          return
+        }
         const contact={name, number}
         dispatch(changeContactThunk({ id, contact }))
         onCloseModal()
@@ -68,3 +67,5 @@ export default function ModalOnChangeContact({onCloseModal, open, id, name, numb
     </div>
   );
 }
+
+export default ModalOnChangeContact

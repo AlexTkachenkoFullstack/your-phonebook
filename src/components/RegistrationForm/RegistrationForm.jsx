@@ -3,7 +3,7 @@ import { EmailHelpText, Form, Input, InputContainer, Label, RegButton } from "./
 import { registrationThunk } from "redux/auth/operations"
 import { useState } from "react"
 
-export const RegistrationForm = () => {
+const RegistrationForm = () => {
 const dispatch=useDispatch()
 const [name, setName]=useState('')
 const [email, setEmail]=useState('')
@@ -58,3 +58,5 @@ const [password, setPassword] = useState('')
             </Form>
     )
 }
+
+export default RegistrationForm

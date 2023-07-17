@@ -1,9 +1,8 @@
-import { BgImg, Container, Form, Input, InputContainer, Label, LogButton } from "./LoginForm.styled"
+import { Form, Input, InputContainer, Label, LogButton } from "./LoginForm.styled"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { loginThunk } from "redux/auth/operations"
-import { LoginFormEl } from "./LoginForm.styled"
-export const LoginForm = () => {
+const LoginForm = () => {
     const dispatch = useDispatch()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -43,3 +42,5 @@ export const LoginForm = () => {
         </Form>
     )
 }
+
+export default LoginForm

@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux"
 import { countContacts } from "utils/contsctsCounter"
 import { CounterContactsContainer, CounterText, CounterTextTitle } from "./ContactsCounter.styled"
-export const ContactsCounter = () => {
-    const contacts=useSelector(state=>state.contacts.items)
+import { contactsSelector } from "redux/contacts/selectors"
+const ContactsCounter = () => {
+    const contacts=useSelector(contactsSelector)
     return (
         <CounterContactsContainer>
             <CounterTextTitle>Total contacts:</CounterTextTitle>
@@ -10,3 +11,5 @@ export const ContactsCounter = () => {
         </CounterContactsContainer>
     )
 }
+
+export default ContactsCounter

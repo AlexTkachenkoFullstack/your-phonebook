@@ -2,7 +2,7 @@ import { ArrowDown, Container, ImageContainer, HomeListText, TextContainer, Home
 import oldPhoneImage from './/..//..//images/bgMainPage.png'
 import smartPhoneImage from './/..//..//images/smattphone.webp'
 
-export const Home = () => {
+const Home = () => {
     return (
         <Container>
             <TextContainer>
@@ -54,3 +54,6 @@ export const Home = () => {
         </Container>
     )
 }
+
+
+export default Home

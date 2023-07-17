@@ -1,10 +1,10 @@
-
 import React from "react";
 import { FormContainer, FormLabelName, FormInputName, FormInputTel,  FormButton, ErrorText } from "./ContactForm.styled";
 import { Formik, ErrorMessage } from 'formik';
 import *as yup from 'yup'
 import {  useDispatch, useSelector } from "react-redux";
 import { addContactThunk } from "redux/contacts/operations";
+import { contactsSelector } from "redux/contacts/selectors";
  const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 // phoneNumber: Yup.string().matches(phoneRegExp, 'Phone number is not valid')
@@ -26,19 +26,15 @@ const FormError = ({name}) => {
 }
     
 
-function ContactForm() {
-
-    const contacts = useSelector(state=>state.contacts.items)
-
+const ContactForm=()=>{
+    const contacts = useSelector(contactsSelector)
     const dispatch=useDispatch()
     const handleSubmit = ({ name: newName, phone }, actions) => {
         if(contacts.some(({name})=>newName===name)){
             alert(`${newName} is already in contacts`)
             return
         }
-
         dispatch(addContactThunk({ name: newName, number: phone.toString() }))
-        
        actions.resetForm() 
 }
 

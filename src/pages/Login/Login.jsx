@@ -1,8 +1,7 @@
-import { Registration } from "pages/Registration/Registration"
 import { BgImg, Container, LoginPageText } from "./Login.styled"
-import { LoginForm } from "components/LoginForm/LoginForm"
-import { Outlet } from "react-router-dom"
-export const Login = () => {
+import LoginForm from "components/LoginForm/LoginForm"
+
+const Login = () => {
     return (<>
     
         <Container>
@@ -56,3 +55,5 @@ export const Login = () => {
         </>
     )
 }
+
+export default Login

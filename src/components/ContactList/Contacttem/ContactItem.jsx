@@ -1,30 +1,22 @@
-
 import PropTypes from 'prop-types';
 import { ButtonChangeContact, ContactIcon, ButtonDeliteContact, ButtonText, ContactListItem, ContactListItemInfo, ContactListItemText } from "./Contacttem.styled"
 import { useDispatch } from "react-redux"
-
 import { useState } from "react";
 import { deleteContactThunk } from "redux/contacts/operations";
 import { createPortal } from 'react-dom';
 import ModalOnChangeContact from "components/ModalOnChangeContact/ModalOnChangeContact";
 const modalRoot=document.getElementById('modal-root')
 
-export const ContactItem = ({ id, name, number }) => {
+const ContactItem = ({ id, name, number }) => {
     const [open, setOpen] = useState(false);
-
+    const [deleting, setDeleting]=useState(false)
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-
     const dispatch = useDispatch()
-    const [deleting, setDeleting]=useState(false)
     const handleDelete = (event) => {
         setDeleting(true)
         dispatch(deleteContactThunk(id))
     }
-
-    // const openModal = () => {
-        
-    // }
 
     return (<ContactListItem>
                     <ContactIcon />
@@ -60,3 +52,5 @@ ContactItem.propTypes = {
     name: PropTypes.string.isRequired,
     number:PropTypes.string.isRequired
 }
+
+export default ContactItem

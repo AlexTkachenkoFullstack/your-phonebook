@@ -13,7 +13,6 @@ export const fetchContactsThunk = createAsyncThunk(
                 throw new Error('No token')
             }
             const response = await instance('/contacts')
-            console.log(response.data)
             return response.data
         } catch (error) {
             thunkAPI.rejectWithValue(error.message)

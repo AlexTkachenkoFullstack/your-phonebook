@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux"
 import { Link } from "./Navigation.styled"
-export const Navigation = () => {
-    const auth = useSelector(state => state.auth.token)
+import { tokenSelector } from "redux/auth/selectors"
+const Navigation = () => {
+    const auth = useSelector(tokenSelector)
     
     return (
         <>
@@ -11,3 +12,5 @@ export const Navigation = () => {
             
     )
 }
+
+export default Navigation

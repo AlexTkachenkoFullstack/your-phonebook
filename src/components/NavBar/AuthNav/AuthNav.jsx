@@ -1,5 +1,5 @@
 import { Link } from "./AuthNav.styled"
-export const AuthNav = () => {
+const AuthNav = () => {
     return (
         <>
             <Link to='/registration' style={{paddingRight: 20}}>Registration</Link>
@@ -7,3 +7,5 @@ export const AuthNav = () => {
         </>
     )
 }
+
+export default AuthNav

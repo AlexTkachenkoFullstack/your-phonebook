@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux"
 import { LogOutButton, UserName } from "./UserMenu.styled"
 import { logOutThunk } from "redux/auth/operations"
-export const UserMenu = () => {
+const UserMenu = () => {
     const userName = useSelector(state => state.auth.user.name)
     const dispatch=useDispatch()
     const onLogOut = () => {
@@ -15,3 +15,5 @@ export const UserMenu = () => {
         </>
     )
 }
+
+export default UserMenu
