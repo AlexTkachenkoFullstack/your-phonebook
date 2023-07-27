@@ -1,8 +1,8 @@
 {
-  "name": "goit-react-hw-08-phonebook",
+  "name": "your-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://AlexTkachenkoFullstack.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://AlexTkachenkoFullstack.github.io/your-phonebook/",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
