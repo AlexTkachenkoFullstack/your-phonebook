@@ -18,7 +18,7 @@ export const ContactIcon = styled(IoPersonCircleSharp)`
   color: #00005a;
 `;
 export const ContactListItemText = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   color: #00005a;
   margin-right: 15px;
@@ -41,21 +41,21 @@ export const ButtonChangeContact = styled(Button)`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 28px;
+  width: 30px;
+  height: 24px;
   background-color: #aed219;
   border-radius: 20px;
   margin-right: 5px;
   @media screen and ${devices.xs} {
     height: 28px;
-    width: 60px;
+    width: 30px;
   }
   @media screen and ${devices.md} {
     height: 35px;
-    width: 80px;
+    width: 60px;
   }
   @media screen and ${devices.lg} {
-    width: 80px;
+    width: 70px;
   }
 
   &:hover,
@@ -70,21 +70,21 @@ export const ButtonDeliteContact = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
+  width: 50px;
   height: 28px;
   background-color: #f47c74;
   border-radius: 20px;
   border: none;
   @media screen and ${devices.xs} {
     height: 28px;
-    width: 60px;
+    width: 50px;
   }
   @media screen and ${devices.md} {
     height: 35px;
-    width: 80px;
+    width: 70px;
   }
   @media screen and ${devices.lg} {
-    width: 80px;
+    width: 70px;
   }
 
   &:hover,
@@ -95,14 +95,14 @@ export const ButtonDeliteContact = styled.button`
   }
 `;
 export const ButtonText = styled.p`
-  font-size: 10px;
+  font-size: 8px;
   margin: 0;
   text-indent: unset;
   color: black;
   @media screen and ${devices.md} {
-    font-size: 14px;
+    font-size: 12px;
   }
   @media screen and ${devices.lg} {
-    font-size: 14px;
+    font-size: 12px;
   }
 `;

@@ -8,7 +8,7 @@ export const AppBarComp = styled(AppBar)`
   margin-right: auto;
   left: 0;
   @media screen and ${devices.xs} {
-    width: 426px;
+    width: 480px;
   }
   @media screen and ${devices.md} {
     width: 768px;
