@@ -1,19 +1,6 @@
 import styled from '@emotion/styled';
 import { devices } from 'constants/constants';
 
-// export const LoginFormEl = styled.form`
-//   width: 300;
-//   background: rgba(0, 0, 0, 0.1);
-//   backdrop-filter: blur(10px);
-//   position: absolute;
-//   right: 24px;
-//   top: 50px;
-//   border: 3px solid transparent;
-//   border-image: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%) 20% / 1 / 0
-//     stretch;
-//   padding: 10;
-// `;
-
 export const Form = styled.form`
   width: 90%;
   background: rgba(0, 0, 0, 0.1);

@@ -41,21 +41,21 @@ export const ButtonChangeContact = styled(Button)`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 24px;
+  min-width: 50px;
+  height: 20px;
   background-color: #aed219;
   border-radius: 20px;
   margin-right: 5px;
   @media screen and ${devices.xs} {
-    height: 28px;
-    width: 30px;
+    height: 20px;
+    width: 50px;
   }
   @media screen and ${devices.md} {
-    height: 35px;
-    width: 60px;
+    height: 32px;
+    width: 90px;
   }
   @media screen and ${devices.lg} {
-    width: 70px;
+    width: 90px;
   }
 
   &:hover,
@@ -70,17 +70,17 @@ export const ButtonDeliteContact = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 24px;
+  width: 40px;
+  height: 20px;
   background-color: #f47c74;
   border-radius: 20px;
   border: none;
   @media screen and ${devices.xs} {
-    height: 28px;
-    width: 50px;
+    height: 20px;
+    width: 40px;
   }
   @media screen and ${devices.md} {
-    height: 35px;
+    height: 32px;
     width: 70px;
   }
   @media screen and ${devices.lg} {
