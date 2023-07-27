@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { devices } from 'constants/constants';
 
 export const UserName = styled.p`
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
   margin-right: 15px;
   color: #ffff26;
@@ -18,9 +18,9 @@ export const UserName = styled.p`
 `;
 export const LogOutButton = styled.button`
   background-color: #8f9cdc;
-  width: 65px;
+  width: 75px;
   height: 30px;
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
