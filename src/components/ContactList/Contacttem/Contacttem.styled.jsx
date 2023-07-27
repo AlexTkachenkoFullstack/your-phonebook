@@ -18,7 +18,7 @@ export const ContactIcon = styled(IoPersonCircleSharp)`
   color: #00005a;
 `;
 export const ContactListItemText = styled.p`
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   color: #00005a;
   margin-right: 15px;
@@ -28,7 +28,7 @@ export const ContactListItemText = styled.p`
   text-indent: 3px;
   font-family: 'Caveat', cursive;
   @media screen and ${devices.xs} {
-    font-size: 16px;
+    font-size: 18px;
   }
   @media screen and ${devices.md} {
     font-size: 27px;
