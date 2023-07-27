@@ -15,8 +15,7 @@ import { devices } from 'constants/constants';
 // `;
 
 export const Form = styled.form`
-  min-width: 244px;
-  width: auto;
+  width: 90%;
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   position: absolute;
@@ -27,8 +26,10 @@ export const Form = styled.form`
   border-image: linear-gradient(90deg, #00c9ff 0%, #92fe9d 100%) 20% / 1 / 0
     stretch;
   padding: 10px;
-  @media screen and ${devices.xs} {
+  @media screen and ${devices.xs} and (max-width: 767px) {
     width: 244px;
+    right: 50%;
+    transform: translateX(50%);
   }
   @media screen and ${devices.md} {
     width: 300px;
