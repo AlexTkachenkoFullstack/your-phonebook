@@ -1,4 +1,4 @@
-import { ArrowDown, Container, ImageContainer, HomeListText, TextContainer, HomeText, HomeH2 } from "./Home.styled"
+import { ArrowDown, Container, ImagesContainer,HomeImageOldPhones, HomeImageSmartphone, HomeListText, TextContainer, HomeText, HomeH2 } from "./Home.styled"
 import oldPhoneImage from './/..//..//images/bgMainPage.png'
 import smartPhoneImage from './/..//..//images/smattphone.webp'
 
@@ -15,11 +15,12 @@ const Home = () => {
 </HomeText>
 <HomeText>The transition from landline phones to smartphones has not only allowed us to make calls but also granted us constant access to our contacts anytime, anywhere. Our phone book has become mobile and convenient, and electronic applications have empowered us to efficiently manage our contacts.
                 </HomeText>
-                <ImageContainer>
-                <img src={oldPhoneImage} alt="old phohe" width='700px' height='240px' />
-                <ArrowDown/> 
-                <img src={smartPhoneImage} alt="smartPhone" width='700px' height='460px' />
-                </ImageContainer>
+                <ImagesContainer>
+
+                        <HomeImageOldPhones src={oldPhoneImage} alt="old phohe" width='700px' height='240px' />
+                        <ArrowDown/> 
+                        <HomeImageSmartphone src={smartPhoneImage} alt="smartPhone" width='700px' height='460px' />
+                </ImagesContainer>
                 
 <HomeText>The history of the first phone book dates back to the late 19th century. In 1878, just a few years after the invention of the telephone, the first phone book was published. It included only 50 subscribers and served as an experiment, aiming to assist people in finding the necessary phone numbers.
 </HomeText>
