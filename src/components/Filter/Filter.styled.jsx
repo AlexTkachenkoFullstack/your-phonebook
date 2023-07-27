@@ -51,18 +51,22 @@ export const FilterInput = styled.input`
   cursor: pointer;
   outline: none;
   opacity: 0.8;
+  font-size: 16px;
   font-family: 'Caveat', cursive;
   @media screen and ${devices.xs} {
+    font-size: 16px;
     width: 395px;
   }
 
   @media screen and ${devices.md} {
     width: 500px;
     margin-left: 112px;
+    font-size: 18px;
   }
   @media screen and ${devices.lg} {
     width: 575px;
     margin-left: 170px;
+    font-size: 20px;
   }
 
   &:hover,
