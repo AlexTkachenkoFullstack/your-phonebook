@@ -4,6 +4,7 @@ import { devices } from 'constants/constants';
 
 export const AppBarComp = styled(AppBar)`
   width: 100%;
+  height: 64px;
   margin-left: auto;
   margin-right: auto;
   left: 0;

@@ -10,7 +10,7 @@ export const Container = styled.div`
   box-shadow: 0px 0px 100px 50px #000;
   margin-top: 45px;
   @media screen and ${devices.xs} {
-    width: 426px;
+    width: 480px;
   }
   @media screen and ${devices.md} {
     width: 768px;

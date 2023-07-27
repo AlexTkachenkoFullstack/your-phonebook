@@ -70,8 +70,8 @@ export const ButtonDeliteContact = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 28px;
+  width: 30px;
+  height: 24px;
   background-color: #f47c74;
   border-radius: 20px;
   border: none;
