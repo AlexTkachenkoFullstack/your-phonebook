@@ -6,19 +6,19 @@ This Phonebook application allows users to manage their contacts effectively. Us
 ## Technologies Used
 This project is built with the following technologies and libraries:
 
-React: A JavaScript library for building user interfaces.
-react-router-dom: Declarative routing for React applications.
-Axios: A promise-based HTTP client for making requests to the server.
-styled-components: A library for styling React components with tagged template literals.
-Formik: A popular form library for handling form state and validation.
-Yup: A schema-based validation library for JavaScript objects.
-Redux: A predictable state container for managing global application state.
-react-redux: Official React bindings for Redux.
-Bootstrap: A popular CSS framework for building responsive and mobile-first web applications.
-notiflix: A JavaScript library for displaying notifications.
-react-loader-spinner: A library for displaying loading spinners.
-react-icons: A library of popular icons.
-validator: A library for data validation.
+<p>React: A JavaScript library for building user interfaces.</p>
+<p>react-router-dom: Declarative routing for React applications.</p>
+<p>Axios: A promise-based HTTP client for making requests to the server.</p>
+<p>styled-components: A library for styling React components with tagged template literals.</p>
+<p>Formik: A popular form library for handling form state and validation.</p>
+<p>Yup: A schema-based validation library for JavaScript objects.</p>
+<p>Redux: A predictable state container for managing global application state.</p>
+<p>react-redux: Official React bindings for Redux.</p>
+<p>Bootstrap: A popular CSS framework for building responsive and mobile-first web applications.</p>
+<p>notiflix: A JavaScript library for displaying notifications.</p>
+<p>react-loader-spinner: A library for displaying loading spinners.</p>
+<p>react-icons: A library of popular icons.</p>
+<p>validator: A library for data validation.</p>
 
 ## Demo
 You can try the live demo of the Phonebook App [here](https://alextkachenkofullstack.github.io/your-phonebook/).
