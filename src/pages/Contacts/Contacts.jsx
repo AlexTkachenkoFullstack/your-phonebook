@@ -22,7 +22,7 @@ const Contacts = () => {
     }, [auth, dispatch])
 
 
-    return (<ContactsContainer>
+    return (<ContactsContainer className={'container'}>
                 {isLoading
                 ? <ContactsSpinner/>
                 : <>

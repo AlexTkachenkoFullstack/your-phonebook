@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 export const instance = axios.create({
     baseURL: 'https://connections-api.herokuapp.com/'
@@ -21,6 +22,9 @@ export const registrationThunk = createAsyncThunk(
             setAuthHeader(response.data.token)
             return response.data
         } catch (error) {
+            if(error.response.data.code===11000 && error.response.data.name==='MongoError'){
+                Notify.failure('User with this email is already in the database');
+            }
             return thunkAPI.rejectWithValue(error.message)
         }
         
@@ -35,6 +39,9 @@ export const loginThunk = createAsyncThunk(
             setAuthHeader(response.data.token)
             return response.data
         } catch (error) {
+            if(error.response.status===400){
+                Notify.failure('Enter the correct password or email');
+            }
             return thunkAPI.rejectWithValue(error.message)
         }
         

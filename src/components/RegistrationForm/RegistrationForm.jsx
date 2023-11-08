@@ -2,13 +2,15 @@ import { useDispatch } from "react-redux"
 import { EmailHelpText, Form, Input, InputContainer, Label, RegButton } from "./RegistrationForm.styled"
 import { registrationThunk } from "redux/auth/operations"
 import { useState } from "react"
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const RegistrationForm = () => {
 const dispatch=useDispatch()
 const [name, setName]=useState('')
 const [email, setEmail]=useState('')
 const [password, setPassword] = useState('')
-    
+ 
+
     const handleChange = (e) => {
         switch (e.target.name) {
             case 'name':
@@ -25,7 +27,7 @@ const [password, setPassword] = useState('')
         
     }
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
         const name = e.target.elements.name.value;
         const password = e.target.elements.password.value;
@@ -34,11 +36,17 @@ const [password, setPassword] = useState('')
             alert('Please fill in all fields of the form')
             return
         }
-        dispatch(registrationThunk({ name, email, password }))
-        setName('');
-        setEmail('');
-        setPassword('')
+        const regexEmail = /^(?=.*[a-zA-Z]).{7,}$/; 
+        if (!regexEmail.test(password)) {
+            Notify.failure('The password must be at least 7 characters long and include at least one letter');
+            return
+        } 
+            dispatch(registrationThunk({ name, email, password }))
+            setName('');
+            setEmail('');
+            setPassword('')
     }
+    
     return (
          <Form onSubmit={handleSubmit}>
                 <InputContainer>
@@ -52,7 +60,7 @@ const [password, setPassword] = useState('')
                 </InputContainer>
                 <InputContainer >
                     <Label htmlFor="inputPassword1" className="form-label">Password</Label>
-                <Input type="password" onChange={handleChange} className="form-control" id="inputPassword1" name='password' value={password} />
+                <Input type="password" onChange={handleChange} className="form-control" id="inputPassword1" name='password' value={password}/>
                 </InputContainer>
                 <RegButton type="submit" className="btn btn-primary">Register</RegButton>
             </Form>
